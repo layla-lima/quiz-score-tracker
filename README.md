@@ -1,8 +1,7 @@
 # Quiz Score Tracker
 
 Este é um aplicativo simples para testar seus conhecimentos. O usuário pode responder a uma série de perguntas e, em seguida, verificar quantas respostas ele acertou.
-Você pode acessar o site clicando [aqui](https://layla-lima.github.io/quiz-score-tracker/).
-
+Você pode acessar o site clicando <a href="https://layla-lima.github.io/quiz-score-tracker/" target="_blank">aqui</a>.
 ## Funcionalidades
 
 - Apresenta uma série de perguntas sobre diferentes tópicos.
