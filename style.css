@@ -10,6 +10,10 @@ body {
 h1 {
     text-align: center;
     margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte do sistema para compatibilidade */
+    font-size: 48px; /* Tamanho da fonte */
+    color: #ffffff; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra do texto */
 }
 
 /* Estilos para o botão de enviar respostas */
