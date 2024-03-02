@@ -12,6 +12,32 @@ h1 {
     margin-top: 20px;
 }
 
+/* Estilos para o botão de enviar respostas */
+#enviar-respostas-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ff6666; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+}
+
+#enviar-respostas-btn:hover {
+    background-color: #cc3333; /* Cor de fundo do botão ao passar o mouse */
+}
+
+/* Estilos para o contador de respostas */
+#resultado {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaço superior para destacar o contador */
+    font-size: 20px; /* Tamanho de fonte maior para destacar */
+    color: #ff6666; /* Cor de destaque para o texto */
+}
+
 /* Estilos para o quiz */
 #quiz {
     max-width: 800px;
@@ -73,22 +99,4 @@ input[type="radio"]:hover {
 
 span {
     vertical-align: middle;
-}
-
-/* Estilos para o botão de enviar respostas */
-#enviar-respostas-btn {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #ff6666; /* Cor de fundo do botão */
-    color: #ffffff; /* Cor do texto do botão */
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
-}
-
-#enviar-respostas-btn:hover {
-    background-color: #cc3333; /* Cor de fundo do botão ao passar o mouse */
 }
