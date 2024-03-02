@@ -91,31 +91,48 @@ const perguntas = [
     }
 ];
 
-const quiz = document.querySelector('#quiz') 
-const template = document.querySelector('template')
-const quizItem = template.content.cloneNode(true)
-quiz.appendChild(quizItem)
+const quiz = document.querySelector('#quiz');
+const enviarRespostasBtn = document.querySelector('#enviar-respostas-btn');
+let acertos = 0;
 
 for (const item of perguntas) {
-    const quizItem = template.content.cloneNode(true)
-    quizItem.querySelector('h3').textContent = item.pergunta
+    const quizItem = document.createElement('div');
+    quizItem.classList.add('quiz-item');
+    const perguntaTitulo = document.createElement('h3');
+    perguntaTitulo.textContent = item.pergunta;
+    quizItem.appendChild(perguntaTitulo);
 
     for (let resposta of item.respostas) {
-        const dt = quizItem.querySelector('dl dt').cloneNode(true)
-        dt.querySelector('span').textContent = resposta
-        dt.querySelector('input').setAttribute('name', 'pergunta-' + perguntas.indexOf(item))
-        dt.querySelector('input').value = item.respostas.indexOf(resposta)
-        dt.querySelector('input').onchange = (event) => {
-            const estaCorreta = event.target.value == item.correta
-            if(estaCorreta) {
-                alert('acertou')
-            }
-        }
-
-        quizItem.querySelector('dl').appendChild(dt)
+        const dt = document.createElement('dt');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'pergunta-' + perguntas.indexOf(item);
+        input.value = item.respostas.indexOf(resposta);
+        const span = document.createElement('span');
+        span.textContent = resposta;
+        dt.appendChild(input);
+        dt.appendChild(span);
+        quizItem.appendChild(dt);
     }
 
-    quizItem.querySelector('dl dt').remove()
+    quiz.appendChild(quizItem);
+}
 
-    quiz.appendChild(quizItem)
+enviarRespostasBtn.addEventListener('click', () => {
+    acertos = 0;
+    for (const item of perguntas) {
+        const inputs = document.querySelectorAll('input[type="radio"][name="pergunta-' + perguntas.indexOf(item) + '"]:checked');
+        if (inputs.length === 1) {
+            const respostaSelecionada = parseInt(inputs[0].value);
+            if (respostaSelecionada === item.correta) {
+                acertos++;
+            }
+        }
+    }
+    mostrarResultado();
+});
+
+function mostrarResultado() {
+    const resultado = document.querySelector('#resultado');
+    resultado.textContent = `Você acertou ${acertos} perguntas!`;
 }

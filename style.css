@@ -1,0 +1,94 @@
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-color: #1a1a1a;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos para o quiz */
+#quiz {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.quiz-item {
+    margin-bottom: 20px;
+}
+
+.quiz-item h3 {
+    margin-bottom: 10px;
+    color: #ff6666; /* Nova cor para os títulos das perguntas */
+}
+
+dl {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+dt {
+    margin-bottom: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ff6666; /* Nova cor para a borda da bolinha */
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6666; /* Nova cor para o preenchimento da bolinha */
+    border-radius: 50%;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+span {
+    vertical-align: middle;
+}
+
+/* Estilos para o botão de enviar respostas */
+#enviar-respostas-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ff6666; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+}
+
+#enviar-respostas-btn:hover {
+    background-color: #cc3333; /* Cor de fundo do botão ao passar o mouse */
+}
